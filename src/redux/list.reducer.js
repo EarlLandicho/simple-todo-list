@@ -1,9 +1,10 @@
 
 import { addItemToList } from './list.utils'
-import { addTodo } from './list.actions'
+import { addTodo, INCREMENT_ID } from './list.actions'
 
 const INTIAL_STATE = {
-    listItems: []
+    listItems: [],
+    id: 0
 }
 
 const listReducer = (state = INTIAL_STATE, action) => {
@@ -12,6 +13,11 @@ const listReducer = (state = INTIAL_STATE, action) => {
             return {
                 ...state,
                 listItems: addItemToList(state.listItems, action.payload)
+            }
+        case 'INCEREMENT_ID':
+            return{
+                ...state,
+                id: INCREMENT_ID()
             }
         default: 
             return state

@@ -17,10 +17,7 @@ function AddTodo(props)
         <div>
             <input placeholder = "Type in todo here" type = 'text' value = {input.todo} onChange= {e => setInput({todo: e.target.value, id:idCounter})}/>
             <button onClick = {handleClick}>add to todo</button>
-
-
         </div>
-
     )
 }
 
